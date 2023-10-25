@@ -10,8 +10,28 @@ const Projects = () => {
   const trigRef = useRef(null);
   const sectRef = useRef(null);
 
+  const ballRef1 = useRef(null);
+  const ballRef2 = useRef(null);
+
   gsap.registerPlugin(ScrollTrigger);
   useEffect(() => {
+    const balls = gsap.fromTo(
+      ballRef1.current,
+      {
+        y: 0,
+        rotate: 720,
+        ease: Power3.easeIn,
+      },
+      {
+        translateY: -300,
+        scrollTrigger: {
+          trigger: ballRef1.current,
+          start: "top top",
+          end: "bottom bottom",
+          scrub: true,
+        },
+      }
+    );
     const anim = gsap.fromTo(
       sectRef.current,
       {
@@ -25,8 +45,8 @@ const Projects = () => {
           trigger: trigRef.current,
           start: "top top",
           end: "2000 top",
-          damp: 0.3,
-          scrub: 0.6,
+          drag: 0.3,
+          scrub: true,
           pin: true,
         },
       }
@@ -42,24 +62,65 @@ const Projects = () => {
       <section className="scroll-container">
         <div ref={trigRef}>
           <div ref={sectRef} className="scroll-inner">
-            <div className="scroll-section">
-              <h1 className="proj-headings">Featured Projects</h1>
-              <button></button>
+            <div className="project-section-title">
+              <img
+                ref={ballRef1}
+                className="ball-img"
+                src="/ball2.svg"
+                alt="syymbols"
+              />
+
+              <h1 className="proj-headings">
+                Featured
+                <br />
+                Projects
+              </h1>
+
+              <img
+                ref={ballRef2}
+                className="ball-img"
+                src="/ball1.svg"
+                alt="syymbols"
+              />
             </div>
 
             <div className="scroll-section">
-              <img src="/project1.svg" alt="proj1" />
-              <h1 className="proj-title">ConferenceAPI Website</h1>
+              <img className="proj-img" src="/project1.svg" alt="proj1" />
+
+              <div className="button-containers">
+                <h1 className="proj-title">ConferenceAPI Website</h1>
+                <div className="but-contain">
+                  <button className="button-skills">Hackathon winner🏆</button>
+                  <button className="button-skills">React</button>
+                  <button className="button-skills">API</button>
+                  <button className="button-skills">Figma</button>
+                </div>
+              </div>
             </div>
 
             <div className="scroll-section">
-              <img src="/project2.svg" alt="proj1" />
-              <h1 className="proj-title">Startup Website Design</h1>
+              <img className="proj-img" src="/project2.svg" alt="proj1" />
+
+              <div className="button-containers">
+                <h1 className="proj-title">Startup Website Design</h1>
+                <div className="but-contain">
+                  <button className="button-skills">Figma</button>
+                  <button className="button-skills">Web Design</button>
+                </div>
+              </div>
             </div>
 
             <div className="scroll-section">
-              <img src="/project3.png" alt="proj1" />
-              <h1 className="proj-title">Hackathon Website</h1>
+              <img className="proj-img" src="/project3.png" alt="proj1" />
+
+              <div className="button-containers">
+                <h1 className="proj-title">Hackathon Website</h1>
+                <div className="but-contain">
+                  <button className="button-skills">NextJS</button>
+                  <button className="button-skills">Figma</button>
+                  <button className="button-skills">TailwindCSS</button>
+                </div>
+              </div>
             </div>
           </div>
         </div>
