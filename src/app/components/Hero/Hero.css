@@ -3,12 +3,12 @@
 }
 .hero-headingg {
     display: flex;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: flex-start;
     font-family: 'Anton', sans-serif;
     text-transform: uppercase;
-    font-size: 35vh;
+    font-size:35vh;
     padding: 1rem;
     color:#111;
     font-weight: bolder;
@@ -16,7 +16,7 @@
     line-height: 35vh;
     padding-top: 2rem;
     margin-top: 2rem;
-    opacity: 0;
+    
   
 }
 .hero-desc {
@@ -24,7 +24,7 @@
     margin: 1rem;
     padding: 1rem;
     font-weight:400;
-    opacity: 0;
+    line-height: 1.25rem;
 }
 
 .about-wrapper{
@@ -41,4 +41,5 @@
   line-height: 6vh;
   color: white;
   font-size: 4vh;
+  text-align: center;
 }

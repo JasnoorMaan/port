@@ -12,23 +12,118 @@ const Projects = () => {
 
   const ballRef1 = useRef(null);
   const ballRef2 = useRef(null);
+  const imgRef1 = useRef(null);
+  const imgRef2 = useRef(null);
+  const imgRef3 = useRef(null);
+  
 
   gsap.registerPlugin(ScrollTrigger);
   useEffect(() => {
-    const balls = gsap.fromTo(
-      ballRef1.current,
+    let mm=gsap.matchMedia();
+  mm.add("(max-width: 700px)",()=>{
+    const anim = gsap.fromTo(
+      ".scroll-container",
       {
-        y: 0,
-        rotate: 720,
-        ease: Power3.easeIn,
+        translateX: 0,
       },
       {
-        translateY: -300,
+        scrollTrigger: {
+          trigger: ".scroll-container",
+          start: "top 80%",
+          end: "bottom 0",
+          drag: 0.3,
+          scrub: true,
+          pin: true,
+          markers:true,
+        },
+      }
+    );
+  });
+    const ballOne = gsap.fromTo(
+      ballRef1.current,
+      {
+        y: -400,
+        rotate: 180,
+        
+      },
+      {
+        translateY: 0,
+        rotate: 0,
+        
         scrollTrigger: {
           trigger: ballRef1.current,
-          start: "top top",
-          end: "bottom bottom",
-          scrub: true,
+          start: "top 80%",
+          end: "bottom",
+          scrub: 3,
+        },
+      }
+    );
+    const ballTwo = gsap.fromTo(
+      ballRef2.current,
+      {
+        y: 200,
+        rotate: 180,
+      },
+      {
+        translateY: 180,
+        rotate: 0,
+    
+        scrollTrigger: {
+          trigger: ballRef1.current,
+          start: "start",
+          end:"bottom",
+          scrub: 1,
+        },
+      }
+    );
+    const projs1 = gsap.fromTo(
+      imgRef1.current,
+      {
+        scale:1.5,
+      },
+      {
+        scale:1,
+
+    
+        scrollTrigger: {
+          trigger: imgRef1.current,
+          start: "start",
+          end:"bottom",
+          scrub: 1,
+        },
+      }
+    );
+    const projs2 = gsap.fromTo(
+      imgRef2.current,
+      {
+        scale:1.5,
+      },
+      {
+        scale:1,
+
+    
+        scrollTrigger: {
+          trigger: imgRef2.current,
+          start: "bottom",
+          end:"start",
+          scrub: 1,
+        },
+      }
+    );
+    const projs3 = gsap.fromTo(
+      imgRef3.current,
+      {
+        scale:1.5,
+      },
+      {
+        scale:1,
+
+    
+        scrollTrigger: {
+          trigger: imgRef3.current,
+          start: "bottom -600",
+          end:"start",
+          scrub: 2,
         },
       }
     );
@@ -63,9 +158,10 @@ const Projects = () => {
         <div ref={trigRef}>
           <div ref={sectRef} className="scroll-inner">
             <div className="project-section-title">
+              
               <img
                 ref={ballRef1}
-                className="ball-img"
+                className="ball-img1"
                 src="/ball2.svg"
                 alt="syymbols"
               />
@@ -78,14 +174,15 @@ const Projects = () => {
 
               <img
                 ref={ballRef2}
-                className="ball-img"
+                className="ball-img2"
                 src="/ball1.svg"
                 alt="syymbols"
               />
+
             </div>
 
             <div className="scroll-section">
-              <img className="proj-img" src="/project1.svg" alt="proj1" />
+              <img ref={imgRef1} className="proj-img" src="/project1.svg" alt="proj1" />
 
               <div className="button-containers">
                 <h1 className="proj-title">ConferenceAPI Website</h1>
@@ -99,7 +196,7 @@ const Projects = () => {
             </div>
 
             <div className="scroll-section">
-              <img className="proj-img" src="/project2.svg" alt="proj1" />
+              <img ref={imgRef2} className="proj-img" src="/project2.svg" alt="proj1" />
 
               <div className="button-containers">
                 <h1 className="proj-title">Startup Website Design</h1>
@@ -111,7 +208,7 @@ const Projects = () => {
             </div>
 
             <div className="scroll-section">
-              <img className="proj-img" src="/project3.png" alt="proj1" />
+              <img ref={imgRef3} className="proj-img" src="/project3.png" alt="proj1" />
 
               <div className="button-containers">
                 <h1 className="proj-title">Hackathon Website</h1>

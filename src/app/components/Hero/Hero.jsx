@@ -10,20 +10,6 @@ const Hero = () => {
     gsap.registerPlugin(ScrollTrigger);
 
 
-    tl.to(".hero-headingg", {
-      y: -10,
-      opacity: 1,
-      ease: Power3.easeIn,
-      duration: 1,
-      delay: 3.5,
-    }).to(".hero-desc", {
-      y: -10,
-      opacity: 1,
-      ease: Power3.easeIn,
-      duration: 0.7,
-      delay: 0.2,
-    });
-
     ScrollTrigger.create({
    
       trigger: '.about-wrapper',
@@ -57,8 +43,8 @@ const Hero = () => {
           THIRD YEAR ENGINEERING STUDENT AT NITJ <br />
           BASED IN JALANDHAR
         </p>
-      </div>
-
+        </div>
+        
       <div className="about-wrapper">
         <div className="about-content">
           <p className="about-written">
