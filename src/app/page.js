@@ -5,6 +5,7 @@ import styles from './page.module.css'
 import Hero from './components/Hero/Hero'
 import Loading from './components/Loading/Loading'
 import Projects from './components/Proj/Projects' 
+import NavBar from './components/NavBar/NavBar'
 
 
 
@@ -20,7 +21,8 @@ export default function Home() {
   
   return (
     <>
-    <Loading />
+    
+    <NavBar />
     <Hero />
     <Projects />
     </>

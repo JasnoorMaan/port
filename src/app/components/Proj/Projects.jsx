@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+
 import { useEffect, useState, useRef } from "react";
 import { gsap, Expo, Power3 } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -79,7 +80,7 @@ const Projects = () => {
     const projs1 = gsap.fromTo(
       imgRef1.current,
       {
-        scale:1.5,
+        scale:1.25,
       },
       {
         scale:1,
@@ -96,7 +97,7 @@ const Projects = () => {
     const projs2 = gsap.fromTo(
       imgRef2.current,
       {
-        scale:1.5,
+        scale:1.25,
       },
       {
         scale:1,
@@ -113,7 +114,7 @@ const Projects = () => {
     const projs3 = gsap.fromTo(
       imgRef3.current,
       {
-        scale:1.5,
+        scale:1.25,
       },
       {
         scale:1,
@@ -154,6 +155,7 @@ const Projects = () => {
   }, []);
   return (
     <>
+    
       <section className="scroll-container">
         <div ref={trigRef}>
           <div ref={sectRef} className="scroll-inner">
@@ -163,7 +165,7 @@ const Projects = () => {
                 ref={ballRef1}
                 className="ball-img1"
                 src="/ball2.svg"
-                alt="syymbols"
+                alt="symbols"
               />
 
               <h1 className="proj-headings">
@@ -176,7 +178,7 @@ const Projects = () => {
                 ref={ballRef2}
                 className="ball-img2"
                 src="/ball1.svg"
-                alt="syymbols"
+                alt="symbols"
               />
 
             </div>
@@ -229,7 +231,7 @@ const Projects = () => {
         </div>
         <div className="social-links">
           <ul className="social-list">
-            <li className="list-item">jasnoorm0001@gmail.com</li>
+            <li className="list-item">jasnoormwork@gmail.com</li>
             <li className="list-item">Github</li>
             <li className="list-item">Linkedin</li>
             <li className="list-item">Twitter</li>
@@ -238,7 +240,7 @@ const Projects = () => {
       </section>
       <section className="last">
         <p className="last-line">Designed and Developed by me</p>
-        <span>&#169; {new Date().getFullYear()}</span>
+        <span>JM &#169; {new Date().getFullYear()}</span>
       </section>
     </>
   );
