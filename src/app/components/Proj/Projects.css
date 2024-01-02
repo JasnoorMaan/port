@@ -1,4 +1,6 @@
-
+*{
+    overflow: hidden;
+}
 .proj-headings{
     color: #f5f5f5;
     font-family: 'Anton',sans-serif;
