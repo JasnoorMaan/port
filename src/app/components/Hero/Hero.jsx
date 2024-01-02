@@ -24,7 +24,7 @@ const Hero = () => {
       onLeaveBack: () => {
         gsap.to(".about-wrapper, .left-right", {
           duration: 1.0,
-          backgroundColor: "#f5f5f5",
+          backgroundColor: "#D9D9D9",
         });
       },
     });
