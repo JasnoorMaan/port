@@ -107,6 +107,7 @@
   align-items: stretch;
   justify-content: space-around;
   flex-wrap: wrap;
+  overflow: hidden;
 }
 .headContainer{
   position: relative;
@@ -120,6 +121,7 @@
   margin: 2rem;
   min-width: 27vw;
   color: #121212;
+  overflow: hidden;
 }
   .skillBox:nth-child(1) {
     background-color: #F5E1BE; /* Color for the first div */
@@ -139,6 +141,7 @@
   padding-top: 2rem;
   padding-bottom: 1rem;
   font-weight: 600;
+  overflow: hidden;
 }
 .about-headings-skill{
   font-size: 40vh;
@@ -156,20 +159,13 @@
     transform: translateX(-100%);
   }
 }
+
+
+
+
+
+
 @media screen and (max-width:900px){
-   /*marquee fix*/
-  .mHeading{
-    font-size: 10rem;
-    padding-left: 4rem;
-    padding-right: 4rem;
-    font-weight: 400;
-    font-family: 'Anton' , sans-serif;
-  }
-  .marquee{
-    padding: 1rem;
-    background-color: #FFFF80;
-    height: 40vh;
-  }
    /*skills section heading container*/
   .skill-con{
     width: auto;
@@ -206,16 +202,9 @@
   }
    /*about section fix*/
   .about-wrapper{
-    height: 90vh;
+    height: 100vh;
     color: white;
     display: block;
-  }
-  .about-content{
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-    flex-direction: column;
-    flex-wrap: wrap;
   }
   .about-headings{
     position:relative;
@@ -239,7 +228,7 @@
     position:static;
   }
   .marquee-con{
-    height:20vh;
+    height:28vh;
     background-color: #FFFF80;
     white-space: nowrap;
   }

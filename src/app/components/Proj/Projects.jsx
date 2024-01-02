@@ -155,7 +155,7 @@ const Projects = () => {
 
       <section className="footer-container">
         <div className="touch-heading">
-          <button className="touch-button">Let's get in touch✌️</button>
+          <div className="touch-button"> Let's get in touch✌️</div>
         </div>
         <div className="social-links">
           <ul className="social-list">
