@@ -1,12 +1,14 @@
 "use client"
 import Image from 'next/image'
-import {useEffect} from 'react'
+import dynamic from 'next/dynamic';
+
+import {useEffect, useState} from 'react'
 import styles from './page.module.css'
 import Hero from './components/Hero/Hero'
 import Loading from './components/Loading/Loading'
+import Loader from './components/Loading/Loader'
 import Projects from './components/Proj/Projects' 
 import NavBar from './components/NavBar/NavBar'
-
 
 
 export default function Home() {
@@ -21,10 +23,13 @@ export default function Home() {
   
   return (
     <>
-    
+    <Loading />
+    <div className='main-container'>
     <NavBar />
     <Hero />
+
     <Projects />
+    </div>
     </>
   )
 }

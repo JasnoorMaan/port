@@ -3,8 +3,6 @@ import gsap from "gsap";
 import { Power2, Power3 } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import "./Hero.css";
-import { Libre_Caslon_Display } from "next/font/google";
-import Marquee from "react-fast-marquee";
 
 const Hero = () => {
   useEffect(() => {
@@ -53,63 +51,75 @@ const Hero = () => {
       <div className="about-wrapper">
         <div className="about-content">
           <h1 className="about-headings">ABOUT ME</h1>
+        </div>
 
-          <div className="about-wriiten-box">
-            <p className="about-written">
-              I am a passionate front-end developer, dedicated to delivering
-              exceptional websites. To me, websites are more than just design; they're
-              the storytellers of a product, narrating the solutions they offer
-              to users. Whether it's crafting a user-friendly interface✨,
-              optimizing web performance, or staying up-to-date with the latest
-              web technologies, I enjoy turning complex problems into simple,
-              beautiful, and intuitive designs. Let's work together to create
-              something amazing!🚀
-            </p>
-          </div>
+        <div className="about-wriiten-box">
+          <p className="about-written">
+            I am a passionate front-end developer, dedicated to delivering
+            exceptional websites. To me, websites are more than just design;
+            they're the storytellers of a product, narrating the solutions they
+            offer to users. Whether it's crafting a user-friendly interface✨,
+            optimizing web performance, or staying up-to-date with the latest
+            web technologies, I enjoy turning complex problems into simple,
+            beautiful, and intuitive designs. Let's work together to create
+            something amazing!🚀
+          </p>
         </div>
       </div>
-      <Marquee className="marquee">
-      <div className="mHeading">Software Developer</div>
-      <div className="mHeading">Freelancer</div>
-      <div className="mHeading">UI/UX Designer</div>
-    </Marquee>
 
-    <div className="skill-con">
-      <h1 className="about-headings">Skills</h1>
-      <div className="skill-wrap">
-      <div className="skillBox">
-        <h2>Languages</h2>
-        <ul className="skillList">
-          <li>C/C++</li>
-          <li>HTML & CSS</li>
-          <li>Javascript</li>
-          <li>Typescript</li>
-          <li>Python</li>
-          <li>SQL</li>
-        </ul>
-      </div>
-      <div className="skillBox">
-        <h2>Frameworks</h2>
-        <ul className="skillList">
-          <li>React.js</li>
-          <li>Next.js</li>
-          <li>Node.js</li>
-          <li>Astro</li>
-        </ul>
-      </div>
-      <div className="skillBox">
-        <h2>Technologies</h2>
-        <ul className="skillList">
-        <li>Figma</li>
-          <li>Git and Github</li>
-          <li>Vite</li>
-          <li>NPM</li>
-          <li>Postman</li>
-          <li>TailwindCSS</li>
-        </ul>
-      </div>
-      </div>
       
+      
+      
+      <div className="marquee-con">
+      <div className="marquee-slider">
+        <h1>Software Developer ✨ Freelancer ✨ UI/UX Designer</h1>
+        </div>
+        <span>   </span> 
+        <div className="marquee-slider">
+        <h1>Software Developer ✨ Freelancer ✨ UI/UX Designer</h1>
+        </div>
+      </div>
+
+      
+      
+      
+      <div className="headContainer">
+        <h1 className="about-headings-skill">Skills</h1>
+      </div>
+      <div className="skill-con">
+        <div className="skill-wrap">
+          <div className="skillBox">
+            <h1 className="skill-box-head">Languages</h1>
+            <ul className="skillList">
+              <li>C/C++</li>
+              <li>HTML & CSS</li>
+              <li>Javascript</li>
+              <li>Typescript</li>
+              <li>Python</li>
+              <li>SQL</li>
+            </ul>
+          </div>
+          <div className="skillBox">
+            <h1 className="skill-box-head">Libraries/Frameworks</h1>
+            <ul className="skillList">
+              <li>React.js</li>
+              <li>Next.js</li>
+              <li>Node.js</li>
+              <li>Astro</li>
+            </ul>
+          </div>
+          <div className="skillBox">
+            <h1 className="skill-box-head">Technologies</h1>
+            <ul className="skillList">
+              <li>Figma</li>
+              <li>Git and Github</li>
+              <li>Vite</li>
+              <li>NPM</li>
+              <li>Postman</li>
+              <li>TailwindCSS</li>
+            </ul>
+          </div>
+        </div>
       </div>
     </>
   );
