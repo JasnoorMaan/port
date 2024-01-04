@@ -9,9 +9,22 @@ import Loading from './components/Loading/Loading'
 import Loader from './components/Loading/Loader'
 import Projects from './components/Proj/Projects' 
 import NavBar from './components/NavBar/NavBar'
+import CursorPointer from './components/Cursor';
 
 
 export default function Home() {
+  const [x, setX] = useState(0)
+  const [y, setY] = useState(0)
+  useEffect(() => {
+    const handleMouseMovement = (e) => {
+      setX(e.clientX)
+      setY(e.clientY)
+    }
+    document.addEventListener('mousemove', handleMouseMovement);
+    return () => {
+      document.removeEventListener('mousemove', handleMouseMovement);
+    }
+  }, [x, y])
   useEffect( ()=>{
     (
       async()=>{
@@ -20,11 +33,20 @@ export default function Home() {
       }
     )()
   },[])
+
+
+  
+
+  
   
   return (
     <>
     <Loading />
     <div className='main-container'>
+    <CursorPointer 
+     x={x}
+     y={y}
+     />
     <NavBar />
     <Hero />
     <Projects />

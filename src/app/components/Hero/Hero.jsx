@@ -1,10 +1,13 @@
 import React, { useEffect } from "react";
 import gsap from "gsap";
-import { Power2, Power3 } from "gsap";
+import { Power2, Power3, Expo } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import "./Hero.css";
+import SplitType from 'split-type'
 
 const Hero = () => {
+  const myText= new SplitType('.about-headings-skill')
+  const myHead= new SplitType('.hero-headingg')
   useEffect(() => {
     const tl = gsap.timeline();
     gsap.registerPlugin(ScrollTrigger);
@@ -30,12 +33,22 @@ const Hero = () => {
     });
   }, []);
 
+  gsap.to('.char', {
+    y: 0,
+    stagger: 0.05,
+    delay: 0.2,
+    duration: 0.5,
+    ease:'Power2.in'
+  });
+  
+
   return (
     <>
       <div className="left-right">
         <div className="hero-container">
           <h1 className="hero-headingg">
-            Jasnoor <br />
+            Jasnoor <br /></h1>
+            <h1 className="hero-headingg">
             Maan
           </h1>
           <p className="hero-desc">

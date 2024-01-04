@@ -1,5 +1,6 @@
-*{
-  font-family: 'Poppins', sans-serif;
+.char{
+  transform: translateY(600px);
+  transform: transform;
 }
 .left-right{
   display: flex;
@@ -150,6 +151,8 @@
   font-family: 'Anton' , sans-serif;
   position: absolute;
   left: 0;
+  clip-path: polygon(0 0,100% 0, 100% 100%, 0% 100%);
+  line-height: 30rem;
 }
 @keyframes slide {
   from{
