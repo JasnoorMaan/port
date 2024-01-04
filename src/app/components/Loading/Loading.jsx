@@ -3,15 +3,7 @@ import { gsap, Expo, Power3 } from "gsap";
 import "./Loading.css";
 
 const Loading = () => {
-  useEffect(() => {
-    // Set body class to 'loading' when the loading component mounts
-    document.body.classList.add("loading");
 
-    // Clear the 'loading' class and restore overflow when the component unmounts
-    return () => {
-      document.body.classList.remove("loading");
-    };
-  }, []);
   const [counter, setCounter] = useState(0);
 
   useEffect(() => {

@@ -35,21 +35,32 @@ export default function Home() {
   },[])
 
 
-  
+  const [loading, setLoading] = useState(false);
+  useEffect(() => {
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+    }, 3800);
+  }, []);
 
-  
-  
   return (
     <>
-    <Loading />
-    <div className='main-container'>
     <CursorPointer 
      x={x}
      y={y}
      />
+    <div className="container">
+      {loading ? (
+        <div className="loader-container">
+            <Loading />
+        </div>
+      ) : (
+        <div className="main-container">
     <NavBar />
     <Hero />
     <Projects />
+    </div>
+      )}
     </div>
     </>
   )

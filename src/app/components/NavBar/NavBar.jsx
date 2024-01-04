@@ -13,7 +13,7 @@ const NavBar = () => {
       y:'-100%',
     },{
       y:0,
-      delay:5,
+      delay:3,
       ease:'Power4.easeOut'
     });
   },[])

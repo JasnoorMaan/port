@@ -1,19 +1,18 @@
-import React, { useEffect,useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { Power2, Power3, Expo } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import "./Hero.css";
-import SplitType from 'split-type'
+import SplitType from "split-type";
 
 const Hero = () => {
-
   useEffect(() => {
     const tl = gsap.timeline();
     gsap.registerPlugin(ScrollTrigger);
 
     ScrollTrigger.create({
       trigger: ".about-wrapper",
-      start: "top 50%",
+      start: "top 0%",
       end: "bottom 0%",
 
       onEnter: () => {
@@ -36,107 +35,111 @@ const Hero = () => {
   const target1 = useRef(null);
   const target2 = useRef(null);
   const target3 = useRef(null);
-  const descRef=useRef(null);
+  const descRef = useRef(null);
 
   useEffect(() => {
     if (target.current) {
-      gsap.set('.hero-headingg', { visibility: "visible" });
-      const text = new SplitType('.hero-headingg');
+      gsap.set(".hero-headingg", { visibility: "visible" });
+      const text = new SplitType(".hero-headingg");
       gsap.to(text.chars, {
         y: 0,
-        delay:3,
         stagger: {
           from: "bottom",
-          each: 0.03
+          each: 0.03,
         },
         duration: 1,
-        ease: "Power4.easeOut"
+        ease: "Power4.easeOut",
       });
     }
   }, [target]);
   useEffect(() => {
-      gsap.fromTo(target1.current, {
+    gsap.fromTo(
+      target1.current,
+      {
         opacity: 0,
-        scale:1.5,
+        scale: 1.5,
         duration: 4,
-        ease: "Power4.easeOut"
-      },{
-        opacity:1,
-        delay:5,
-        scale:1
-      });
+        
+        ease: "Power4.easeOut",
+      },
+      {
+        opacity: 1,
+        scale: 1,
+        delay: 2,
+      }
+    );
   }, [target1]);
   useEffect(() => {
-    gsap.fromTo(descRef.current, {
-      duration: 3,
-      x:'-100%'
-    },{
-      x:0,
-      delay:6,
-      ease: "Power4.out"
-    });
-}, [descRef]);
-
-useEffect(() => {
-  const aboutTextTl = gsap.timeline({
-    scrollTrigger: {
-      trigger: ".about-headings",
-      start: "top bottom",
-      end: "bottom 0%",
-  
-    },
-  });
-
-  if (target2.current) {
-    gsap.set('.about-headings', { visibility: "visible" });
-    const text = new SplitType('.about-headings');
-    aboutTextTl.to(text.chars, {
-      y: 0,
-      stagger: {
-        from: "bottom",
-        each: 0.03
+    gsap.fromTo(
+      descRef.current,
+      {
+        duration: 3,
+        x: "-150%",
       },
-      duration: 1,
-      ease: "Power4.easeOut"
-    });
-  }
-}, [target2]);
+      {
+        x: 0,
+        delay: 2,
+        ease: "Power4.out",
+      }
+    );
+  }, [descRef]);
 
-useEffect(() => {
-  
-  const skillTextTl = gsap.timeline({
-    scrollTrigger: {
-      trigger: ".about-headings-skill",
-      start: "top bottom",
-      end: "bottom 0%",
-      
-    },
-  });
-
-  if (target3.current) {
-    gsap.set('.about-headings-skill', { visibility: "visible" });
-    const text = new SplitType('.about-headings-skill');
-    skillTextTl.to(text.chars, {
-      y: 0,
-      stagger: {
-        from: "bottom",
-        each: 0.03
+  useEffect(() => {
+    const aboutTextTl = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".about-headings",
+        start: "top bottom",
+        end: "bottom 0%",
       },
-      duration: 1,
-      ease: "Power4.easeOut"
     });
-  }
-}, [target3]);
+
+    if (target2.current) {
+      gsap.set(".about-headings", { visibility: "visible" });
+      const text = new SplitType(".about-headings");
+      aboutTextTl.to(text.chars, {
+        y: 0,
+        stagger: {
+          from: "bottom",
+          each: 0.03,
+        },
+        duration: 1,
+        ease: "Power4.easeOut",
+      });
+    }
+  }, [target2]);
+
+  useEffect(() => {
+    const skillTextTl = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".about-headings-skill",
+        start: "top bottom",
+        end: "bottom 0%",
+      },
+    });
+
+    if (target3.current) {
+      gsap.set(".about-headings-skill", { visibility: "visible" });
+      const text = new SplitType(".about-headings-skill");
+      skillTextTl.to(text.chars, {
+        y: 0,
+        stagger: {
+          from: "bottom",
+          each: 0.03,
+        },
+        duration: 1,
+        ease: "Power4.easeOut",
+      });
+    }
+  }, [target3]);
 
   return (
     <>
       <div className="left-right">
         <div ref={target} className="hero-container">
-          <h1  className="hero-headingg">
-            Jasnoor <br /></h1>
-            <h1 className="hero-headingg">
-            Maan
+          <h1 className="hero-headingg">
+            Jasnoor <br />
           </h1>
+          <h1 className="hero-headingg">Maan</h1>
           <p ref={descRef} className="hero-desc">
             A FRONTEND DEVELOPER AND DESIGNER
             <br />
@@ -148,8 +151,10 @@ useEffect(() => {
       </div>
 
       <div className="about-wrapper">
-        <div  className="about-content">
-          <h1 ref={target2} className="about-headings">ABOUT ME</h1>
+        <div className="about-content">
+          <h1 ref={target2} className="about-headings">
+            ABOUT ME
+          </h1>
         </div>
 
         <div className="about-wriiten-box">
@@ -166,24 +171,20 @@ useEffect(() => {
         </div>
       </div>
 
-      
-      
-      
       <div className="marquee-con">
-      <div className="marquee-slider">
-        <h1>Software Developer ✨ Freelancer ✨ UI/UX Designer</h1>
-        </div>
-        <span>   </span> 
         <div className="marquee-slider">
-        <h1>Software Developer ✨ Freelancer ✨ UI/UX Designer</h1>
+          <h1>Software Developer ✨ Freelancer ✨ UI/UX Designer</h1>
+        </div>
+        <span> </span>
+        <div className="marquee-slider">
+          <h1>Software Developer ✨ Freelancer ✨ UI/UX Designer</h1>
         </div>
       </div>
 
-      
-      
-      
       <div className="headContainer">
-        <h1 ref={target3} className="about-headings-skill">Skills</h1>
+        <h1 ref={target3} className="about-headings-skill">
+          Skills
+        </h1>
       </div>
       <div className="skill-con">
         <div className="skill-wrap">
