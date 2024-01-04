@@ -41,7 +41,7 @@ export default function Home() {
   
   return (
     <>
-    {/* <Loading /> */}
+    <Loading />
     <div className='main-container'>
     <CursorPointer 
      x={x}

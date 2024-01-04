@@ -1,11 +1,26 @@
-import React, { useState } from 'react'
+import React, { useEffect,useRef } from "react";
+import gsap from "gsap";
+import { Power2, Power3, Expo } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import SplitType from 'split-type'
 import './NavBar.css'
 
+
 const NavBar = () => {
+  const navRef=useRef(null);
+  useEffect(()=>{
+    const nevi= gsap.fromTo(navRef.current,{
+      y:'-100%',
+    },{
+      y:0,
+      delay:5,
+      ease:'Power4.easeOut'
+    });
+  },[])
   return (
     <>
     <nav className='nav-wrapper'>
-      <ul className='nav-links'>
+      <ul ref={navRef} className='nav-links'>
         <li>ABOUT</li>
         <li>PROJECTS</li>
         <li>CONTACT</li>

@@ -167,7 +167,7 @@ const Projects = () => {
         </div>
       </section>
       <section className="last">
-        <p className="last-line">Designed and Developed by me</p>
+        <p className="last-line">Developed by me</p>
         <span>JM &#169; {new Date().getFullYear()}</span>
       </section>
     </>

@@ -18,6 +18,10 @@
 .hero-container{
   padding-bottom: 1rem;
 }
+.char{
+  transform: translateY(600px);
+  transition: transform 2s;
+}
 .hero-headingg {
     display: flex;
     flex-wrap: nowrap;
@@ -30,6 +34,7 @@
     font-weight: bolder;
     line-height: clamp(6rem,16vw,20rem);
     margin-top: 1rem;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
 }
 .hero-desc {
     font-size: clamp(0.85rem,1vw,1rem);
@@ -45,7 +50,7 @@
   display: flex;
   justify-content: center;
   align-items:center;
-  color: white;
+  color: #D9D9D9;
   position: relative;
 }
 .about-headings{
@@ -55,6 +60,7 @@
   font-family: 'Anton' , sans-serif;
   position: absolute;
   left: 0;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
 }
 .about-content{
   display: flex;
@@ -76,11 +82,10 @@
 }
 
 .skills-wrapper{
-  color:#f5f5f5 ;
+  color:#D9D9D9 ;
 }
 .marquee-con{
   overflow: hidden;
-  
   background-color: #FFFF80;
   white-space: nowrap;
 }
@@ -99,9 +104,10 @@
 .skill-con{
   background-color: #121212;
   min-height: 75vh;
-  color: #f5f5f5;
+  color: #D9D9D9;
   padding: 2rem;
   overflow: hidden;
+  padding-top: 8rem;
 }
 .skill-wrap{
   display: flex;
@@ -109,12 +115,14 @@
   justify-content: space-around;
   flex-wrap: wrap;
   overflow: hidden;
+  z-index: 1000;
 }
 .headContainer{
   position: relative;
   height: 55vh;
   background-color: #121212;
-  color: #f5f5f5;
+  color: #D9D9D9;
+  padding-top: 8rem;
 }
 .skillBox{
   border-radius: 3rem;
@@ -152,7 +160,7 @@
   position: absolute;
   left: 0;
   clip-path: polygon(0 0,100% 0, 100% 100%, 0% 100%);
-  line-height: 30rem;
+  line-height: 20rem;
 }
 @keyframes slide {
   from{
@@ -231,7 +239,6 @@
     position:static;
   }
   .marquee-con{
-    height:28vh;
     background-color: #FFFF80;
     white-space: nowrap;
   }

@@ -3,6 +3,15 @@ import { gsap, Expo, Power3 } from "gsap";
 import "./Loading.css";
 
 const Loading = () => {
+  useEffect(() => {
+    // Set body class to 'loading' when the loading component mounts
+    document.body.classList.add("loading");
+
+    // Clear the 'loading' class and restore overflow when the component unmounts
+    return () => {
+      document.body.classList.remove("loading");
+    };
+  }, []);
   const [counter, setCounter] = useState(0);
 
   useEffect(() => {
@@ -24,7 +33,7 @@ const Loading = () => {
     t1.to(".count-hide", { opacity: 0, duration: 0.3 })
       .to(".count-hide", { display: "none", duration: 0.3 })
       .to(".progress-hide", {
-        height: "100%",
+        height: "100vh",
         ease: Power3.easeOut,
         duration: 0.25,
         delay: 0.1,
