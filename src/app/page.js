@@ -36,12 +36,17 @@ export default function Home() {
 
 
   const [loading, setLoading] = useState(false);
+  const [loadingShown, setLoadingShown] = useState(false);
+
   useEffect(() => {
-    setLoading(true);
-    setTimeout(() => {
-      setLoading(false);
-    }, 3800);
-  }, []);
+  
+    if (!loadingShown) {
+      setTimeout(() => {
+        setLoading(false);
+        setLoadingShown(true); 
+      }, 3800);
+    }
+  }, [loadingShown]);
 
   return (
     <>

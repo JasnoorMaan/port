@@ -36,6 +36,7 @@ const Hero = () => {
   const target2 = useRef(null);
   const target3 = useRef(null);
   const descRef = useRef(null);
+  const skillRef = useRef(null);
 
   useEffect(() => {
     if (target.current) {
@@ -132,6 +133,34 @@ const Hero = () => {
     }
   }, [target3]);
 
+  useEffect(() => {
+    const skillBoxTl = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".skillBox",
+        start: "top bottom",
+        end: "bottom 0%",
+      },
+    });
+
+    if (skillRef.current) {
+      gsap.set(".skillBox", { visibility: "visible" });
+      skillBoxTl.fromTo('.skillBox', {
+        y: '100%',
+        opacity:0 
+      },{
+        y:0,
+        opacity:1,
+        duration: 2,
+        stagger: {
+          from: "bottom",
+          each: 0.05,
+        },
+        ease: "Power4.easeOut"
+      });
+    }
+  }, [skillRef]);
+
+
   return (
     <>
       <div className="left-right">
@@ -157,7 +186,7 @@ const Hero = () => {
           </h1>
         </div>
 
-        <div className="about-wriiten-box">
+        <div id="aboutt" className="about-wriiten-box">
           <p className="about-written">
             I am a passionate front-end developer, dedicated to delivering
             exceptional websites. To me, websites are more than just design;
@@ -188,7 +217,7 @@ const Hero = () => {
       </div>
       <div className="skill-con">
         <div className="skill-wrap">
-          <div className="skillBox">
+          <div ref={skillRef} className="skillBox">
             <h1 className="skill-box-head">Languages</h1>
             <ul className="skillList">
               <li>C/C++</li>
@@ -199,7 +228,7 @@ const Hero = () => {
               <li>SQL</li>
             </ul>
           </div>
-          <div className="skillBox">
+          <div ref={skillRef} className="skillBox">
             <h1 className="skill-box-head">Libraries/Frameworks</h1>
             <ul className="skillList">
               <li>React.js</li>
@@ -208,7 +237,7 @@ const Hero = () => {
               <li>Astro</li>
             </ul>
           </div>
-          <div className="skillBox">
+          <div ref={skillRef} className="skillBox">
             <h1 className="skill-box-head">Technologies</h1>
             <ul className="skillList">
               <li>Figma</li>

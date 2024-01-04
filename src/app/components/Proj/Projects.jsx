@@ -83,7 +83,7 @@ const Projects = () => {
   }, []);
   return (
     <>
-      <section className="scroll-container" >
+      <section id="projectt" className="scroll-container" >
         
         <div ref={trigRef}>
           <div ref={sectRef} className="scroll-inner">
@@ -153,16 +153,16 @@ const Projects = () => {
         </div>
       </section>
 
-      <section className="footer-container">
+      <section id="contactt" className="footer-container">
         <div className="touch-heading">
           <div className="touch-button"> Let's get in touch✌️</div>
         </div>
         <div className="social-links">
           <ul className="social-list">
-            <li className="list-item">jasnoormwork@gmail.com</li>
-            <li className="list-item">Github</li>
-            <li className="list-item">Linkedin</li>
-            <li className="list-item">Twitter</li>
+            <li className="list-item"> <a href="mailto:jasnoormwork@gmail.com">jasnoormwork@gmail.com</a> </li>
+            <li className="list-item"> <a href="https://github.com/JasnoorMaan">Github</a></li>
+            <li className="list-item"> <a href="https://www.linkedin.com/in/jasnoormaan">Linkedin</a></li>
+            <li className="list-item"> <a href="https://twitter.com/mxxnJasnoor">Twitter</a></li>
           </ul>
         </div>
       </section>

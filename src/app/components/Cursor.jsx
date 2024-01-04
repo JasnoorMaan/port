@@ -15,6 +15,7 @@ const CursorPointer = styled.div.attrs(props => ({
     height: 64px;
     transform: translate(-50%, -50%);
     z-index:100;
+    pointer-events:none;
     @media (max-width: 900px) {
         display:none;
       }

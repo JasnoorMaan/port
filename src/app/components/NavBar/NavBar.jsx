@@ -20,11 +20,11 @@ const NavBar = () => {
   return (
     <>
     <nav className='nav-wrapper'>
-      <ul ref={navRef} className='nav-links'>
-        <li>ABOUT</li>
-        <li>PROJECTS</li>
-        <li>CONTACT</li>
-      </ul>
+      <div ref={navRef} className='nav-links'>
+        <a href="#aboutt">ABOUT</a>
+        <a href="#projectt">PROJECTS</a>
+        <a href="#contactt">CONTACT</a>
+      </div>
       
     </nav>
     <hr
