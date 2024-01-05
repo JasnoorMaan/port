@@ -19,7 +19,7 @@
   padding-bottom: 1rem;
 }
 .char{
-  transform: translateY(600px);
+  transform: translateY(300px);
   transition: transform 2s;
 }
 .hero-headingg {
